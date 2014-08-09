@@ -1,0 +1,32 @@
+#include <iostream>
+#include "equations.h"
+
+double equations::resLoop(double *resArray,int config, int resCounter)
+{
+    int i;
+    for (i=0; i<resCounter; i++){
+        if (config == 1){
+            total_R = series(resArray[i]);
+        }
+        if (config == 0){
+
+            total_R = parallel(resArray[i]);
+        }
+    }
+
+    if (config == 0){
+        total_R = 1/total_R;
+    }
+
+    return total_R;
+}
+
+double equations::series(double res){
+    total_R = total_R + res;
+    return total_R;
+}
+
+double equations::parallel(double res){
+    total_R = total_R+(1/res);
+    return total_R;
+}
