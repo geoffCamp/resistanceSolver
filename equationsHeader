@@ -1,0 +1,17 @@
+#ifndef EQUATIONS_H
+#define EQUATIONS_H
+
+using namespace std;
+
+
+class equations
+{
+    public:
+        double resLoop(double *resArray,int config, int resCounter);
+    private:
+        double total_R=0; //total resistance, summed or inversely summed
+        double series(double res);
+        double parallel(double res);
+};
+
+#endif // EQUATIONS_H
